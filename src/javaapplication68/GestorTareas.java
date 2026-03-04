@@ -10,4 +10,13 @@ public class GestorTareas {
         this.lista = new ArrayList <> ();
     }
     
+    public void mostrarTareas() {
+        if (lista.isEmpty()) {
+            System.out.println("No hay tareas registradas.");
+        } else {
+            for (int i = 0; i < lista.size(); i++) {
+                System.out.println((i + 1) + ". " + lista.get(i).descripcion);
+            }
+        }
+    }
 }
