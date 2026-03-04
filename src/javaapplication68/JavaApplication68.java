@@ -2,43 +2,44 @@ package javaapplication68;
 
 import java.util.Scanner;
 
-/**
- *
- * @author joelsanchez
- */
+
 public class JavaApplication68 {
 
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
         GestorTareas gestor = new GestorTareas();
         int opcion;
-
-        do {
-            System.out.println("\nOpciones:");
+        
+        do{
+            System.out.println("Menu");
+            System.out.println("1. Añadir Tarea");
             System.out.println("2. Listar tareas");
             System.out.println("0. Salir");
-            System.out.print("Selecciona una opción: ");
-            opcion = sc.nextInt();
-            sc.nextLine(); // Limpiar buffer
-
-            switch (opcion) {
+            
+            opcion = teclado.nextInt();
+            teclado.nextLine();
+            
+            switch(opcion){
+                case 1:
+                    System.out.println("Introduce la Tarea: ");
+                    String descripcion = teclado.nextLine();
+                    gestor.añadirTarea(descripcion);
+                    break;
+                    
                 case 2:
                     // Aquí se recorre e imprime el array
                     gestor.mostrarTareas();
                     break;
-
+                    
                 case 0:
-                    System.out.println("Saliendo...");
+                    System.out.println("Saliendo del programa...");
                     break;
-
                 default:
-                    System.out.println("Opción no válida");
-                    break;
+                    System.out.println("Opcion no valida");
             }
-
-        } while (opcion != 0);
-
-        sc.close();
+            
+        } while (opcion !=0);
+        
+        teclado.close();
     }
 }
