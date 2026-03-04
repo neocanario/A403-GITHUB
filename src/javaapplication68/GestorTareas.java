@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class GestorTareas {
     
-    ArrayList<Tarea> lista;
+    ArrayList<Tarea> tareas;
     
     public GestorTareas(){
-        this.lista = new ArrayList <> ();
+        this.tareas = new ArrayList <> ();
     }
     
     public void mostrarTareas() {
-        if (lista.isEmpty()) {
+        if (tareas.isEmpty()) {
             System.out.println("No hay tareas registradas.");
         } else {
-            for (int i = 0; i < lista.size(); i++) {
-                System.out.println((i + 1) + ". " + lista.get(i).descripcion);
+            for (int i = 0; i < tareas.size(); i++) {
+                System.out.println((i + 1) + ". " + tareas.get(i).descripcion);
             }
         }
     }
